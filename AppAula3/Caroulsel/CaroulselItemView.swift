@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct CaroulselItemView: View {
+struct CarouselItemView: View {
+    let banner: ServiceType
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(banner.imagem).resizable().scaledToFit().cornerRadius(20)
     }
 }
-
 #Preview {
-    CaroulselItemView()
+    CarouselItemView(banner: ServiceType(id: 1, nome: "", imagem:"motivacional1"))
 }
