@@ -7,29 +7,22 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct NavigationBar: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                // Carrossel com frases motivacionais
-                MotivationalCarouselView()
-                
-                // Grid de atividades
-                HabitGridView()
-                
-                Spacer()
-                
-                // Lista de hábitos registrados
-                HabitListView()
+        HStack{
+            Button("Lucas") {
             }
-            .navigationTitle("Autocuidado")
+            .font(.headline)
+            .fontWeight(.bold)
+            Button(action: {}){
+                Image(systemName: "plus.circle.fill")
+                    .font(.title3)
+                    .foregroundStyle(.gray)
+            }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    NavigationBar()
 }
-

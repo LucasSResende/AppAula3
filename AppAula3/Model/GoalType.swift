@@ -5,14 +5,11 @@
 //  Created by user269368 on 17/11/24.
 //
 
-import SwiftUI
+import Foundation
 
-struct GoalType: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    GoalType()
+struct GoalType: Identifiable{
+let id: Int
+let icone: String
+let titulo: String
+let descricao: String
 }

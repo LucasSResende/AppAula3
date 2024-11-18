@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct GoalListView: View {
+    let goal: GoalType
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Image(systemName: goal.icone).font(.largeTitle)
+            VStack(alignment: .leading){
+                Text(goal.titulo).font(.headline)
+                Text(goal.descricao).font(.subheadline)
+            }
+        }.foregroundStyle(.blue)
     }
 }
-
 #Preview {
-    GoalListView()
+GoalListView(goal: GoalType(id: 1, icone: "moon.zzz.fill", titulo: "Descanso", descricao: "Dormir8h pornoite"))
 }

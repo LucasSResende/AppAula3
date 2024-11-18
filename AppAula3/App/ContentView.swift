@@ -8,16 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentIndex: Int = 0
+    let totalItems = goalMock.count // Total de itens no scroll
+    @State private var timer: Timer?
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ScrollView {
+            VStack {
+                NavigationBar()
+                FeaturesGrid()
+                CarouselTabView()
+                GoalContainer()
+                UserProfileView()
+            }
+            .padding()
         }
-        .padding()
+        .onAppear {
+            startAutoScroll()
+        }
+        .onDisappear {
+            stopAutoScroll()
+        }
+    }
+
+    private func startAutoScroll() {
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { _ in
+            withAnimation {
+                currentIndex = (currentIndex + 1) % totalItems
+            }
+        }
+    }
+
+    private func stopAutoScroll() {
+        timer?.invalidate()
+        timer = nil
     }
 }
+
 
 #Preview {
     ContentView()

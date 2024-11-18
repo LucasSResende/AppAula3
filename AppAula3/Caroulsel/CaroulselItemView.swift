@@ -10,7 +10,12 @@ import SwiftUI
 struct CarouselItemView: View {
     let banner: ServiceType
     var body: some View {
-        Image(banner.imagem).resizable().scaledToFit().cornerRadius(20)
+        Image(banner.imagem)
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(20)
+            .frame(width: 300)
+            .tabViewStyle(.page(indexDisplayMode: .always))
     }
 }
 #Preview {
