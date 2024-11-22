@@ -15,7 +15,6 @@ struct CarouselItemView: View {
             .scaledToFit()
             .cornerRadius(20)
             .frame(width: 300)
-            .tabViewStyle(.page(indexDisplayMode: .always))
     }
 }
 #Preview {

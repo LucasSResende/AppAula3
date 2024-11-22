@@ -10,13 +10,14 @@ import SwiftUI
 struct GoalListView: View {
     let goal: GoalType
     var body: some View {
-        HStack{
+        HStack {
             Image(systemName: goal.icone).font(.largeTitle)
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 Text(goal.titulo).font(.headline)
                 Text(goal.descricao).font(.subheadline)
             }
-        }.foregroundStyle(.blue)
+        }
+        .foregroundStyle(.blue)
     }
 }
 #Preview {

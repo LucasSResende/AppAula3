@@ -8,7 +8,7 @@
 import Foundation
 
 struct ServiceType: Identifiable {
-let id: Int
-let nome: String
-let imagem: String
+    let id: Int
+    let nome: String
+    let imagem: String
 }
