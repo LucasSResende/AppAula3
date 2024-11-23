@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct NavigationBar: View {
-    @ObservedObject var userManager: UserManager
+    @State private var users: [UserModel] = userMock
+    @State private var currentUser: UserModel = userMock.first! // Inicializando com o primeiro user
     @State private var showAddUserModal: Bool = false
-
+    
     var body: some View {
         HStack {
-            // Dropdown para selecionar o usuário
+            // Dropdown para selecionar o user
             Menu {
-                ForEach(userManager.users) { user in
+                ForEach(users) { user in
                     Button(user.nome) {
-                        userManager.currentUser = user
+                        currentUser = user
                     }
                 }
             } label: {
-                Text(userManager.currentUser.nome)
+                Text(currentUser.nome)
                     .font(.headline)
                     .fontWeight(.bold)
             }
             
-            // Botão para adicionar usuários
+            // Botão para adicionar novos usuários
             Button(action: {
                 showAddUserModal.toggle()
             }) {
@@ -35,7 +36,7 @@ struct NavigationBar: View {
             .font(.title2)
             .foregroundStyle(.gray)
             .sheet(isPresented: $showAddUserModal) {
-                AddUserView(users: $userManager.users)
+                AddUserView(users: $users)
             }
         }
         .padding()
@@ -43,8 +44,5 @@ struct NavigationBar: View {
 }
 
 #Preview {
-    NavigationBar(userManager: UserManager(
-        users: userMock,
-        currentUser: userMock.first!
-    ))
+    NavigationBar()
 }

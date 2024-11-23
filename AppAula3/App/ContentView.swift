@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var userManager = UserManager(
-        users: userMock,
-        currentUser: userMock.first!
-    )
-
     var body: some View {
-        VStack {
-            NavigationBar(userManager: userManager)
-            FeaturesGrid()
-            CarouselTabView()
-            GoalContainer()
+        VStack{
+            NavigationBar().padding(.horizontal,15)
+            ScrollView(.vertical, showsIndicators: false){
+                VStack{
+                    FeaturesGrid()
+                    CarouselTabView()
+                    GoalContainer()
+                }}
         }
-        .padding()
     }
 }
 
