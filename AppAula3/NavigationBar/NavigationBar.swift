@@ -9,12 +9,11 @@ import SwiftUI
 
 struct NavigationBar: View {
     @State private var users: [UserModel] = userMock
-    @State private var currentUser: UserModel = userMock.first! // Inicializando com o primeiro user
+    @State private var currentUser: UserModel = userMock.first!
     @State private var showAddUserModal: Bool = false
     
     var body: some View {
         HStack {
-            // Dropdown para selecionar o user
             Menu {
                 ForEach(users) { user in
                     Button(user.nome) {
@@ -27,7 +26,6 @@ struct NavigationBar: View {
                     .fontWeight(.bold)
             }
             
-            // Botão para adicionar novos usuários
             Button(action: {
                 showAddUserModal.toggle()
             }) {
@@ -46,3 +44,4 @@ struct NavigationBar: View {
 #Preview {
     NavigationBar()
 }
+

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EE85741A2CF242D100909E1A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EE8574192CF242D100909E1A /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		EE45623D2CDFC1F300C33920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE85741A2CF242D100909E1A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = AppAula3;
 			packageProductDependencies = (
+				EE8574192CF242D100909E1A /* Alamofire */,
 			);
 			productName = AppAula3;
 			productReference = EE45622C2CDFC1F200C33920 /* AppAula3.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = EE4562232CDFC1F200C33920;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EE8574182CF2421300909E1A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EE45622D2CDFC1F200C33920 /* Products */;
 			projectDirPath = "";
@@ -552,6 +561,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE8574182CF2421300909E1A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE8574192CF242D100909E1A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE8574182CF2421300909E1A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE4562242CDFC1F200C33920 /* Project object */;
 }
